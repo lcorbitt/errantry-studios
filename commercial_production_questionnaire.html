@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Errantry Studios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav id="home" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="my-container">
+            <a href="index.html">
+              <img class="logo" style="height: 70px;" src="es_logo.png"/>
+            </a>
+          </div>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right" style="margin-top: 10px;">
+            <li><a href="index.html">HOME</a></li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown d-inline-block">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                PORTFOLIO <span class="glyphicon glyphicon-chevron-down d-inline-block" aria-hidden="true"></span>
+              </a>
+              <div class="dropdown-menu" style="padding: 10px 15px;">
+                <a class="dropdown-item" href="commercial_productions.html">Commercial Productions</a>
+                <hr>
+                <a class="dropdown-item" href="real_estate_videography.html">Real Estate Videography</a>
+                <hr>
+                <a class="dropdown-item" href="photography.html">Photography</a>
+                <hr>
+                <a class="dropdown-item" href="events.html">Events</a>
+                <hr>
+              </div>
+            </li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+          </ul>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+          <ul class="list-group">
+            <li class="list-group-item">Commercial Productions</li>
+            <li class="list-group-item">Real Estate Videography</li>
+            <li class="list-group-item">Photography</li>
+            <li class="list-group-item">Events</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- QUESTIONNAIRE -->
+    <div class="container questionnaire-container" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleLabel" aria-hidden="true" style="margin-top: 60px;">
+      <div class="dialog" role="document">
+        <div class="content">
+          <div class="header">
+            <div>
+              <button type="button" class="btn btn-lg btn-secondary cancel" style="margin-bottom: -5px; margin-top: 30px;">Back</button>
+              <!-- <a href="commercial_productions.html" type="button" class="btn btn-lg btn-secondary" style="margin-bottom: 0; margin-top: 25px;" id="cancelBtn">Back</a> -->
+            </div>
+            <div class="row">
+              <div class="container text-center" style="width: 70%;">
+                <a href="index.html">
+                  <img src="es_initials.png" style="height: 175px;"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="e-questionnaire-header-container">
+              <h2 class="e-questionnaire-header" id="exampleLabel">Commercial Production Questionnaire</h2>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="">
+            <form action="https://formspree.io/f/mdoplbaq" method="POST" enctype="multipart/form-data">
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-name" class="col-form-label">Your name:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-name">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-email" class="col-form-label">Your email:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-email">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-phone" class="col-form-label">Your phone:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-phone">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="company-name-and-industry" class="col-form-label">Company name and industry:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="company-name-and-industry">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="target-audience" class="col-form-label">Who is the target audience for this video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="target-audience">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="key-messages" class="col-form-label">What key messages do you want in the video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="key-messages">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="ideal-timeline" class="col-form-label">What is your ideal timeline to receive the video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="ideal-timeline">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="locations" class="col-form-label">How many locations do you want filmed in the video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="locations">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="desired-action" class="col-form-label">What action are you trying to get the viewer to take after watching the video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="desired-action">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="desired-vibe" class="col-form-label">What feel/vibe are you going for in the video? (inspirational, hype, dramatic, etc.)</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="desired-vibe">
+              </div>
+
+              <div class="form-group form-check e-card-long">
+                <div class="e-pill-white">
+                  <label class="form-check-label">Do you need a script and voice-over for the video?</label>
+                  <br>
+                  <input class="form-check-input questionnaire-input" type="radio" name="noScript" id="no-script" value="false" checked>
+                  <label class="form-check-label" for="exampleRadios1" style='margin-right: 20px;'>
+                    No
+                  </label>
+
+                  <input class="form-check-input questionnaire-input" type="radio" name="needScript" id="need-script" value="true">
+                  <label class="form-check-label" for="exampleRadios1">
+                    Yes
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group e-card-long">
+                <label for="platforms" class="col-form-label">What platforms will the video be viewed on?</label>
+                <input type="text" class="form-control questionnaire-input" id="platforms">
+              </div>
+
+              <!-- <div class="form-group">
+                <label for="file-upload" class="col-form-label">Upload a file:</label>
+                <input type="file" class="form-control" id="file-upload">
+              </div> -->
+
+              <div class="footer">
+                <button type="button" class="btn btn-lg btn-secondary cancel">Cancel</button>
+                <button type="submit" class="btn btn-lg btn-primary e-primary-background">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (Navigation Section) -->
+    <div id="navigate">
+      <div class="col-xs-12 text-center">
+        <br>
+
+        <h2>Navigate</h2>
+        <p><a href="#myPage" title="To Top">Home</a></p>
+        <p><a href="commercial_productions.html">Commercial Productions</a></p>
+        <p><a href="real_estate.html">Real Estate Videos</a></p>
+        <p><a href="photography.html">Photography</a></p>
+        <p><a href="events.html">Events</a></p>
+        <p><a href="contact.html">Contact</a></p>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="https://www.instagram.com/errantrystudios/">Instagram</a></p>
+        <p><a href="https://www.facebook.com/ErrantryStudios/">Facebook</a></p>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center" style="padding: 15px 15px;">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Site built and managed by Lukas Corbitt</a></p>
+    </footer>
+
+    <script>
+      $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 900, function(){
+
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+
+        $(window).scroll(function() {
+          $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+              if (pos < winTop + 600) {
+                $(this).addClass("slide");
+              }
+          });
+        });
+
+        $(".questionnaire-input").focusin(function () {
+          $(this).closest('.e-card-long').css({"border-left": "8px solid dodgerblue", "transition": "all .2s ease-in"});
+        })
+
+        $(".questionnaire-input").focusout(function () {
+          $(this).closest('.e-card-long').css("border-left", "8px solid lightgray")
+        })
+
+        $(".cancel").click(function() {
+          location.href = 'commercial_productions.html';
+        })
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
