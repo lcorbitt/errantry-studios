@@ -69,6 +69,7 @@
           <div class="header">
             <div>
               <button type="button" class="btn btn-lg btn-secondary cancel" style="margin-bottom: -5px; margin-top: 30px;">Back</button>
+              <!-- <a href="commercial_productions.html" type="button" class="btn btn-lg btn-secondary" style="margin-bottom: 0; margin-top: 25px;" id="cancelBtn">Back</a> -->
             </div>
             <div class="row">
               <div class="container text-center" style="width: 70%;">
@@ -79,7 +80,7 @@
             </div>
 
             <div class="e-questionnaire-header-container">
-              <h2 class="e-questionnaire-header" id="exampleLabel">Event Questionnaire</h2>
+              <h2 class="e-questionnaire-header" id="exampleLabel">Real Estate Video Questionnaire</h2>
             </div>
           </div>
 
@@ -110,70 +111,14 @@
 
               <div class="form-group e-card-long">
                 <div class="e-pill-white">
-                  <label for="company-name-and-industry" class="col-form-label">What is the purpose of this event?</label>
+                  <label for="company-name-and-industry" class="col-form-label">What is the square footage of the home?</label>
                 </div>
                 <input type="text" class="form-control questionnaire-input" id="company-name-and-industry">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="company-name-and-industry" class="col-form-label">Where is the event located? (city, state, venue, etc.)</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="company-name-and-industry">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="ideal-timeline" class="col-form-label">What is your ideal timeline to receive the video?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="ideal-timeline">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">Who is your target audience for the video?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">How many hours of the event do you want to be documented?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">How long do you want the video recap to be?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">What action/feeling are you trying to evoke after watching the video?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">What feel/vibe are you going for in the video?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
-              </div>
-
-              <div class="form-group e-card-long">
-                <div class="e-pill-white">
-                  <label for="desired-action" class="col-form-label">What platforms will the video be viewed/shared on?</label>
-                </div>
-                <input type="text" class="form-control questionnaire-input" id="desired-action">
               </div>
 
               <div class="form-group form-check e-card-long">
                 <div class="e-pill-white">
-                  <label class="form-check-label">Is a script/interview and/or voice-over needed for the event video?</label>
+                  <label class="form-check-label">Do you need drone footage?</label>
                   <br>
                   <input class="form-check-input questionnaire-input" type="radio" name="noScript" id="no-script" value="false" checked>
                   <label class="form-check-label" for="exampleRadios1" style='margin-right: 20px;'>
@@ -185,6 +130,52 @@
                     Yes
                   </label>
                 </div>
+              </div>
+
+              <div class="form-group form-check e-card-long">
+                <div class="e-pill-white">
+                  <label class="form-check-label">Do you need real estate photography as well?</label>
+                  <br>
+                  <input class="form-check-input questionnaire-input" type="radio" name="noScript" id="no-script" value="false" checked>
+                  <label class="form-check-label" for="exampleRadios1" style='margin-right: 20px;'>
+                    No
+                  </label>
+
+                  <input class="form-check-input questionnaire-input" type="radio" name="needScript" id="need-script" value="true">
+                  <label class="form-check-label" for="exampleRadios1">
+                    Yes
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="ideal-timeline" class="col-form-label">What is your ideal timeline to receive the video?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="ideal-timeline">
+              </div>
+
+              <div class="form-group form-check e-card-long">
+                <div class="e-pill-white">
+                  <label class="form-check-label">Is a script/interview and/or voice-over needed for the video?</label>
+                  <br>
+                  <input class="form-check-input questionnaire-input" type="radio" name="noScript" id="no-script" value="false" checked>
+                  <label class="form-check-label" for="exampleRadios1" style='margin-right: 20px;'>
+                    No
+                  </label>
+
+                  <input class="form-check-input questionnaire-input" type="radio" name="needScript" id="need-script" value="true">
+                  <label class="form-check-label" for="exampleRadios1">
+                    Yes
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="desired-action" class="col-form-label">What are some of the home amenities that you want to highlight?</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="desired-action">
               </div>
 
               <!-- <div class="form-group">
@@ -271,7 +262,7 @@
         })
 
         $(".cancel").click(function() {
-          location.href = 'events.html';
+          location.href = 'real_estate_videography.html';
         })
       })
     </script>

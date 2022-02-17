@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
     <title>Errantry Studios</title>
     <meta charset="utf-8">
@@ -45,11 +45,9 @@
                 <hr>
                 <a class="dropdown-item" href="events.html">Events</a>
                 <hr>
-                <a class="dropdown-item" href="lifestyle.html">Lifestyle</a>
-                <hr>
               </div>
             </li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
             <li><a href="about.html">ABOUT US</a></li>
           </ul>
         </div>
@@ -59,120 +57,95 @@
             <li class="list-group-item">Real Estate Videography</li>
             <li class="list-group-item">Photography</li>
             <li class="list-group-item">Events</li>
-            <li class="list-group-item">Lifestyle</li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="embed-responsive embed-responsive-16by9" style="margin-top: 80px; margin-bottom: -20px;">
-      <video playsinline autoplay muted loop id="myVideo">
-        <source class="embed-responsive-item" src="contact_header.mov" type="video/mp4">
-      </video>
-    </div>
-
-    <!-- Container (Commercial Productions Section) -->
-    <div id="commerical_productions" class="container-fluid text-center bg-grey">
-      <br>
-      <h2><b>CONTACT US</b></h2>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <p style="color: black;">Collaborating with us is simple! Just click the icon of the service you are looking for below to learn more.</p>
-        </div>
-      </div>
-      <br>
-    </div>
-
-  <!-- Container (Services Section) -->
-  <div id="services" class="container-fluid text-center bg-dark">
-    <h2><b>QUESTIONNAIRES</b></h2>
-
-    <br>
-
-    <div class="row slideanim">
-      <div class="col-sm-6" style="margin-bottom: 25px;">
-        <a href="commercial_production_questionnaire.html">
-          <div
-          class="z-service z-center"
-          style="height: 55vw; width: 55vw; background-image: url('brandan.jpg'); background-size: cover; background-position: center; border-radius: 5px;"
-          >
-          </div>
-          <h4>
-            Commercial Productions
-          </h4>
-          <!-- <p>Lorem ipsum dolor sit amet..</p> -->
-        </a>
-      </div>
-
-      <div class="col-sm-6" style="margin-bottom: 25px;">
-        <a href="real_estate_video_questionnaire.html">
-          <div
-            class="z-service z-center"
-            style="height: 55vw; width: 55vw; background-image: url('real_estate.jpg'); background-size: cover; background-position: center; border-radius: 5px;"
-          >
-          </div>
-          <h4>
-            Real Estate Videography
-          </h4>
-          <!-- <p>Lorem ipsum dolor sit amet..</p> -->
-        </a>
-      </div>
-
-      <div class="col-sm-6" style="margin-bottom: 25px;">
-        <a href="photography_questionnaire.html">
-          <div
-            class="z-service z-center"
-            style="height: 55vw; width: 55vw; background-image: url('alana.jpg'); background-size: cover; background-position: center; border-radius: 5px;"
-          >
-          </div>
-          <h4>
-            Photography
-          </h4>
-          <!-- <p>Lorem ipsum dolor sit amet..</p> -->
-        </a>
-      </div>
-
-      <div class="col-sm-6" style="margin-bottom: 25px;">
-        <a href="event_questionnaire.html">
-          <div
-            class="z-service z-center"
-            style="height: 55vw; width: 55vw; background-image: url('guitar.jpg'); background-size: cover; background-position: bottom left; border-radius: 5px;"
-          >
-          </div>
-          <h4>
-            Events
-          </h4>
-          <!-- <p>Lorem ipsum dolor sit amet..</p> -->
-        </a>
-      </div>
-    </div>
-  </div>
-
-    <!-- Container (Contact Section) -->
-    <div id="contact" class="container-fluid bg-grey" style="background-image: url('background_1.jpg'); background-size: cover; background-position: center;">
-      <h2 class="text-center">GOT A QUESTION?</h2><br>
-      <div class="row">
-        <div class="col-sm-5">
-          <p>Contact us and we'll get back to you within 24 hours.</p>
-          <p><span class="glyphicon glyphicon-map-marker"></span> Nashville, US</p>
-          <p><span class="glyphicon glyphicon-phone"></span> +1 (256) 698-0144</p>
-          <p><span class="glyphicon glyphicon-envelope"></span> errantrystudios@gmail.com</p>
-        </div>
-        <div class="col-sm-7 slideanim">
-          <div class="row">
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    <!-- QUESTIONNAIRE -->
+    <div class="container questionnaire-container" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleLabel" aria-hidden="true" style="margin-top: 60px;">
+      <div class="dialog" role="document">
+        <div class="content">
+          <div class="header">
+            <div>
+              <button type="button" class="btn btn-lg btn-secondary cancel" style="margin-bottom: -5px; margin-top: 30px;">Back</button>
             </div>
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            <div class="row">
+              <div class="container text-center" style="width: 70%;">
+                <a href="index.html">
+                  <img src="es_initials.png" style="height: 175px;"/>
+                </a>
+              </div>
+            </div>
+
+            <div class="e-questionnaire-header-container">
+              <h2 class="e-questionnaire-header" id="exampleLabel">Photography Questionnaire</h2>
             </div>
           </div>
-          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-          <div class="row">
-            <div class="col-sm-12 form-group">
-              <button class="btn btn-default pull-right" type="submit">Send</button>
-            </div>
+
+          <br>
+
+          <div class="">
+            <form action="https://formspree.io/f/mdoplbaq" method="POST" enctype="multipart/form-data">
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-name" class="col-form-label">Your name:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-name">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-email" class="col-form-label">Your email:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-email">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="sender-phone" class="col-form-label">Your phone:</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="sender-phone">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="company-name-and-industry" class="col-form-label">What type of photos are you needing? (headshot, graduation, portrait, product, etc.)</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="company-name-and-industry">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="company-name-and-industry" class="col-form-label">What is the purpose of the photos? (business, social, graduation, blog/lifestyle, etc.)</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="company-name-and-industry">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="ideal-timeline" class="col-form-label">What type of location are you wanting for the photoshoot? (inside, outside, studio, city, house, office, etc.)</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="ideal-timeline">
+              </div>
+
+              <div class="form-group e-card-long">
+                <div class="e-pill-white">
+                  <label for="desired-action" class="col-form-label">What platforms will the photos be used for? (social media, website, business cards, flyers, etc.)</label>
+                </div>
+                <input type="text" class="form-control questionnaire-input" id="desired-action">
+              </div>
+
+              <!-- <div class="form-group">
+                <label for="file-upload" class="col-form-label">Upload a file:</label>
+                <input type="file" class="form-control" id="file-upload">
+              </div> -->
+
+              <div class="footer">
+                <button type="button" class="btn btn-lg btn-secondary cancel">Cancel</button>
+                <button type="submit" class="btn btn-lg btn-primary e-primary-background">Send</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -181,13 +154,14 @@
     <!-- Container (Navigation Section) -->
     <div id="navigate">
       <div class="col-xs-12 text-center">
+        <br>
+
         <h2>Navigate</h2>
         <p><a href="#myPage" title="To Top">Home</a></p>
         <p><a href="commercial_productions.html">Commercial Productions</a></p>
         <p><a href="real_estate.html">Real Estate Videos</a></p>
         <p><a href="photography.html">Photography</a></p>
         <p><a href="events.html">Events</a></p>
-        <p><a href="lifestyle.html">Lifestyle</a></p>
         <p><a href="contact.html">Contact</a></p>
         <p><a href="about.html">About Us</a></p>
         <p><a href="https://www.instagram.com/errantrystudios/">Instagram</a></p>
@@ -237,14 +211,16 @@
           });
         });
 
-        $('#exampleModal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('.modal-title').text('New message to ' + recipient)
-          modal.find('.modal-body input').val(recipient)
+        $(".questionnaire-input").focusin(function () {
+          $(this).closest('.e-card-long').css({"border-left": "8px solid dodgerblue", "transition": "all .2s ease-in"});
+        })
+
+        $(".questionnaire-input").focusout(function () {
+          $(this).closest('.e-card-long').css("border-left", "8px solid lightgray")
+        })
+
+        $(".cancel").click(function() {
+          location.href = 'photography.html';
         })
       })
     </script>
