@@ -13,7 +13,7 @@ const services = [
 const VideoServices = () => {
   return (
     <section className="relative w-full flex flex-col items-center justify-center">
-      <h2 className="text-center text-white text-3xl mb-8 font-bold">OUR VIDEO SERVICES</h2>
+      <h2 className="text-center text-black text-3xl mb-8 font-bold">OUR VIDEO SERVICES</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
         {services.map((service, index) => (
           <Link key={index} href={service.href} className="relative flex flex-col justify-center items-center p-6 rounded-lg text-center h-44 group">
