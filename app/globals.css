@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-/* @theme {
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/*
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -16,12 +17,13 @@
     --foreground: #ededed;
   }
 }
+*/
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-montserrat), sans-serif;
-} */
+}
 
 /* Carousel */
 .slider-container .slick-prev:before,
@@ -37,12 +39,12 @@ body {
 
 
 .slider-container .slick-prev {
-  /* left: 20rem; */
+  left: -5;
   z-index: 100;
 }
 
 .slider-container .slick-next {
-  /* right: 20rem; */
+  right:  -5;
   z-index: 100;
 }
 
@@ -51,3 +53,8 @@ body {
   justify-content: center !important;
 }
 
+.ytp-large-play-button,
+.ytp-button,
+.ytp-large-play-button-red-bg {
+  display: none !important;
+}
