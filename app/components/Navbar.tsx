@@ -5,20 +5,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const links = [
-  { href: '#home', label: 'HOME' },
-  { href: '#services', label: 'SERVICES' },
-  { href: '#estv', label: 'ESTV' },
-  { href: '#about', label: 'ABOUT' },
-  { href: '#contact', label: 'CONTACT' },
+  { href: '/', label: 'HOME' },
+  { href: 'services', label: 'SERVICES' },
+  { href: 'estv', label: 'ESTV' },
+  { href: 'about', label: 'ABOUT' },
+  { href: 'contact', label: 'CONTACT' },
 ];
 
 const serviceLinks = [
-  { href: '#events', label: 'Events' },
-  { href: '#development', label: 'Development & Real Estate' },
-  { href: '#aerial', label: 'Aerial' },
-  { href: '#content-library', label: 'Content Library' },
-  { href: '#corporate', label: 'Corporate' },
-  { href: '#studio', label: 'Studio' },
+  { href: 'events', label: 'Events' },
+  { href: 'development', label: 'Development & Real Estate' },
+  { href: 'aerial', label: 'Aerial' },
+  { href: 'content-library', label: 'Content Library' },
+  { href: 'corporate', label: 'Corporate' },
+  { href: 'studio', label: 'Studio' },
 ];
 
 const Navbar = () => {
@@ -33,7 +33,7 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     timeoutId = setTimeout(() => {
       setDropdownVisible(false);
-    }, 200); // Adjust the delay as needed
+    }, 200);
   };
 
   return (
@@ -55,12 +55,12 @@ const Navbar = () => {
           <li className="relative">
             {isDropdownVisible && (
               <ul 
-                className="absolute top-full -left-[435px] mt-2 bg-black text-white shadow-lg rounded z-50"
+                className="absolute top-full -left-[435px] mt-2 bg-black text-white shadow-lg rounded z-50 p-2"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 {serviceLinks.map((service) => (
-                  <li key={service.href} className="px-4 py-2">
+                  <li key={service.href} className="p-2">
                     <Link 
                       href={service.href} 
                       className="hover:text-cyan-400 text-white/80 transition-colors duration-300 ease-in-out"

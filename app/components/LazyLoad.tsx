@@ -12,7 +12,6 @@ export const LazyLoad: React.FC<LazyLoadProps> = ({ children, placeholder }) => 
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -34,7 +33,7 @@ export const LazyLoad: React.FC<LazyLoadProps> = ({ children, placeholder }) => 
   }, []);
 
   return (
-    <div ref={ref} className="w-full h-full">
+    <div ref={ref} className={`w-full h-full transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       {isVisible ? children : (placeholder || null)}
     </div>
   );

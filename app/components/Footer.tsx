@@ -10,16 +10,16 @@ const Footer = () => {
         <div className="mb-4 md:mb-0">
           <p  className='text-sm'>919 West Main St. Ste. U3</p>
           <p  className='text-sm'>Hendersonville, TN 37075</p>
-          <p  className='text-sm'>Email: <a href="mailto:info@errantrystudios.com" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">info@errantrystudios.com</a></p>
+          <p  className='text-sm'><a href="mailto:info@errantrystudios.com" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">info@errantrystudios.com</a></p>
         </div>
         <div className="flex space-x-6 mb-4 md:mb-0">
-          <Link href="https://www.facebook.com" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
+          <Link href="https://www.facebook.com/ErrantryStudios" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
             <FaFacebook size={24} />
           </Link>
-          <Link href="https://www.youtube.com" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
+          <Link href="https://www.youtube.com/@errantrystudios346" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
             <FaYoutube size={24} />
           </Link>
-          <Link href="https://www.instagram.com" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
+          <Link href="https://www.instagram.com/errantrystudios/?hl=en" target="_blank" className="hover:text-cyan-400 transition-colors duration-300 ease-in-out">
             <FaInstagram size={24} />
           </Link>
         </div>

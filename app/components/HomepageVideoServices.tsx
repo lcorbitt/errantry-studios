@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const services = [
-  { href: '/event-video', icon: '/event_video_icon.png', title: 'EVENT', subtitle: 'VIDEO' },
+  { href: '/events', icon: '/event_video_icon.png', title: 'EVENT', subtitle: 'VIDEO' },
   { href: '/aerial-production', icon: '/aerial_production_icon.png', title: 'AERIAL', subtitle: 'PRODUCTION' },
   { href: '/creative-studio', icon: '/creative_studio_icon.png', title: 'CREATIVE', subtitle: 'STUDIO' },
   { href: '/development-real-estate', icon: '/development_icon.png', title: 'DEVELOPMENT', subtitle: 'REAL ESTATE' },
