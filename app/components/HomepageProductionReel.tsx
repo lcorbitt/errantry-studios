@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 
 const HomepageProductionReel = () => {
   return (
-    <section className="w-full px-32 flex flex-col justify-center bg-black">
+    <section className="w-full px-32 pb-16 flex flex-col justify-center bg-black">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-white">
           PRODUCTION REEL

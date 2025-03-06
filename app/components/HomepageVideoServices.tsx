@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 
 const services = [
-  { href: '/events', icon: '/event_video_icon.png', title: 'EVENT', subtitle: 'VIDEO' },
-  { href: '/aerial-production', icon: '/aerial_production_icon.png', title: 'AERIAL', subtitle: 'PRODUCTION' },
-  { href: '/creative-studio', icon: '/creative_studio_icon.png', title: 'CREATIVE', subtitle: 'STUDIO' },
-  { href: '/development-real-estate', icon: '/development_icon.png', title: 'DEVELOPMENT', subtitle: 'REAL ESTATE' },
-  { href: '/corporate-video', icon: '/corporate_video_icon.png', title: 'CORPORATE', subtitle: 'VIDEO' },
-  { href: '/content-library', icon: '/content_library_icon.png', title: 'CONTENT', subtitle: 'LIBRARY' },
+  { href: '/events', icon: '/video_service_1.png', title: 'EVENT', subtitle: 'VIDEO' },
+  { href: '/aerial-production', icon: '/video_service_2.png', title: 'AERIAL', subtitle: 'PRODUCTION' },
+  { href: '/creative-studio', icon: '/video_service_3.png', title: 'CREATIVE', subtitle: 'STUDIO' },
+  { href: '/real-estate', icon: '/video_service_4.png', title: 'DEVELOPMENT', subtitle: 'REAL ESTATE' },
+  { href: '/corporate-video', icon: '/video_service_5.png', title: 'CORPORATE', subtitle: 'VIDEO' },
+  { href: '/content-library', icon: '/video_service_6.png', title: 'CONTENT', subtitle: 'LIBRARY' },
 ];
 
 const HomepageVideoServices = () => {

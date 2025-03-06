@@ -55,7 +55,7 @@ const VideoModal = ({
       {/* Close button */}
       <button 
         onClick={onClose}
-        className="absolute top-8 right-8 hover:text-white text-cyan-500 transition-colors cursor-pointer"
+        className="absolute top-8 right-8 text-white hover:text-cyan-500 transition-colors cursor-pointer"
       >
         <svg 
           className="w-8 h-8" 

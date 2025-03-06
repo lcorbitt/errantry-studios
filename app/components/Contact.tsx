@@ -32,7 +32,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-black py-14 w-full mx-auto">
+    <form onSubmit={handleSubmit} className="bg-black py-14 w-full mx-auto px-32">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80">
           <div className="space-y-4">
@@ -43,7 +43,7 @@ const ContactForm = () => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -55,7 +55,7 @@ const ContactForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -67,7 +67,7 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -79,7 +79,7 @@ const ContactForm = () => {
                 name="productionLocation"
                 value={formData.productionLocation}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -91,7 +91,7 @@ const ContactForm = () => {
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
               />
             </div>
           </div>
@@ -102,7 +102,7 @@ const ContactForm = () => {
                 name="serviceType"
                 value={formData.serviceType}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
               >
                 <option value="">Select a service</option>
                 <option value="Events">Events</option>
@@ -120,7 +120,7 @@ const ContactForm = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 rows={5}
                 required
               />
@@ -133,7 +133,7 @@ const ContactForm = () => {
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -145,7 +145,7 @@ const ContactForm = () => {
                 name="referral"
                 value={formData.referral}
                 onChange={handleChange}
-                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-400"
+                className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
@@ -163,9 +163,13 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <Link href="/about" className="bg-cyan-600 text-white px-8 py-2 rounded-lg text-xl uppercase hover:bg-cyan-700 transition-colors w-fit">
-          Submit
-        </Link>
+        <div className="flex justify-end mt-16">
+          <Link href="/about"
+            className="bg-cyan-600 text-white px-8 py-2 rounded-lg text-xl uppercase transition-all duration-500 w-fit hover:bg-black hover:text-cyan-600 border border-cyan-600"
+          >
+            Submit
+          </Link>
+        </div>
       </div>
     </form>
   );

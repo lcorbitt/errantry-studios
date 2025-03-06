@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const links = [
-  { href: '/', label: 'HOME' },
-  { href: 'services', label: 'SERVICES' },
+  { href: '#', label: 'SERVICES' },
   { href: 'estv', label: 'ESTV' },
   { href: 'about', label: 'ABOUT' },
   { href: 'contact', label: 'CONTACT' },
@@ -14,7 +14,7 @@ const links = [
 
 const serviceLinks = [
   { href: 'events', label: 'Events' },
-  { href: 'development', label: 'Development & Real Estate' },
+  { href: 'real-estate', label: 'Real Estate & Development' },
   { href: 'aerial', label: 'Aerial' },
   { href: 'content-library', label: 'Content Library' },
   { href: 'corporate', label: 'Corporate' },
@@ -23,7 +23,16 @@ const serviceLinks = [
 
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [isContentVisible, setContentVisible] = useState(false);
+  const pathname = usePathname();
   let timeoutId: NodeJS.Timeout;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setContentVisible(true);
+    }, 500); // Delay of 0.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutId);
@@ -36,13 +45,17 @@ const Navbar = () => {
     }, 200);
   };
 
+  const handleServiceLinkClick = () => {
+    setDropdownVisible(false);
+  };
+
   return (
-    <nav className="bg-black px-16 py-4 flex items-center justify-between">
+    <nav className="bg-black px-32 py-4 flex items-center justify-between relative">
       <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
-        <div className="flex items-center">
+        <Link href="/" className={`flex items-center transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Image src="/logo.png" alt="Logo" width={300} height={300} className="mr-6" />
-        </div>
-        <ul className="flex space-x-10 relative">
+        </Link>
+        <ul className={`flex relative transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
           {links.map((link) => (
             <NavLink 
               key={link.href} 
@@ -63,7 +76,8 @@ const Navbar = () => {
                   <li key={service.href} className="p-2">
                     <Link 
                       href={service.href} 
-                      className="hover:text-cyan-400 text-white/80 transition-colors duration-300 ease-in-out"
+                      onClick={handleServiceLinkClick} // Close dropdown on click
+                      className={`hover:text-cyan-600 transition-colors duration-300 ease-in-out ${pathname === `/${service.href}` ? 'text-cyan-600' : 'text-white/80'}`}
                     >
                       {service.label}
                     </Link>
@@ -81,7 +95,7 @@ const Navbar = () => {
 const NavLink = ({ href, label, onMouseEnter, onMouseLeave }: { href: string; label: string; onMouseEnter?: () => void; onMouseLeave?: () => void }) => {
   return (
     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="relative">
-      <Link href={href} className="hover:text-cyan-400 text-white/80 transition-colors duration-300 ease-in-out">
+      <Link href={href} className="hover:text-cyan-600 text-white/80 transition-colors duration-300 ease-in-out ml-8">
         {label}
       </Link>
     </li>
