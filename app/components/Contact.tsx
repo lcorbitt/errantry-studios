@@ -1,11 +1,17 @@
 'use client';
 
-import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import sendEmail from '../utils/send-email';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/navigation';
 
 const ContactForm = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     phone: '',
     productionLocation: '',
@@ -17,37 +23,74 @@ const ContactForm = () => {
     subscribe: false,
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target as HTMLInputElement;
+
+    console.log(formData);
+
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     });
+
+    if (name === 'message') {
+      if (value.length < 50) {
+        e.target.setCustomValidity('Please provide at least 50 characters.');
+      } else {
+        e.target.setCustomValidity('');
+      }
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    setIsLoading(true);
+    if (form.current) {
+      sendEmail(form.current)
+        .then(() => {
+          setIsLoading(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            productionLocation: '',
+            serviceType: '',
+            date: '',
+            message: '',
+            budget: '',
+            referral: '',
+            subscribe: false,
+          });
+          // Delay the redirect to allow the toast to be visible
+        setTimeout(() => {
+          router.push('/');
+        }, 1000); // Redirect after 1 second
+        })
+        .catch((error) => {
+          setIsLoading(false);
+        });
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-black py-14 w-full mx-auto px-32">
-      <div className="max-w-6xl mx-auto">
+    <form ref={form} onSubmit={handleSubmit} className="bg-black py-14 w-full mx-auto px-16">
+      <ToastContainer hideProgressBar={true} />
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80">
           <div className="space-y-4">
             <div>
               <label className="block mb-2">Full Name*</label>
               <input
                 type="text"
-                name="fullName"
-                value={formData.fullName}
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 className="w-full p-3 bg-black border border-white/50 rounded focus:outline-none focus:border-cyan-600"
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">Phone*</label>
               <input
@@ -59,7 +102,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">Email*</label>
               <input
@@ -71,7 +113,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">Production Location*</label>
               <input
@@ -83,7 +124,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">Date</label>
               <input
@@ -96,7 +136,7 @@ const ContactForm = () => {
             </div>
           </div>
           <div className="space-y-4">
-          <div>
+            <div>
               <label className="block mb-2">Service Type</label>
               <select
                 name="serviceType"
@@ -113,7 +153,6 @@ const ContactForm = () => {
                 <option value="Studio">Studio</option>
               </select>
             </div>
-            
             <div>
               <label className="block mb-2">Tell Us More*</label>
               <textarea
@@ -125,7 +164,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">Budget*</label>
               <input
@@ -137,7 +175,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div>
               <label className="block mb-2">How Did You Hear About Us?*</label>
               <input
@@ -149,7 +186,6 @@ const ContactForm = () => {
                 required
               />
             </div>
-
             <div className="flex items-center">
               <input
                 type="checkbox"
@@ -162,13 +198,23 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-
         <div className="flex justify-end mt-16">
-          <Link href="/about"
-            className="bg-cyan-600 text-white px-8 py-2 rounded-lg text-xl uppercase transition-all duration-500 w-fit hover:bg-black hover:text-cyan-600 border border-cyan-600"
+          <button
+            type="submit"
+            className="bg-cyan-600 text-white px-8 py-2 rounded-lg text-xl uppercase transition-all duration-500 w-fit hover:bg-black hover:text-cyan-600 border border-cyan-600 cursor-pointer"
+            disabled={isLoading}
           >
-            Submit
-          </Link>
+            {isLoading ? (
+              <div className="flex items-center justify-center">
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+              </div>
+            ) : (
+              'Submit'
+            )}
+          </button>
         </div>
       </div>
     </form>

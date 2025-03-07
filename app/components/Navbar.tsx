@@ -24,14 +24,28 @@ const serviceLinks = [
 const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [isContentVisible, setContentVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   let timeoutId: NodeJS.Timeout;
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setContentVisible(true);
-    }, 500); // Delay of 0.5 seconds
+    }, 250); // Delay of 0.25 seconds
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleMouseEnter = () => {
@@ -50,10 +64,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black px-32 py-4 flex items-center justify-between relative">
-      <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
+    <nav className={`px-16 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/80' : 'bg-black'}`}>
+      <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         <Link href="/" className={`flex items-center transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <Image src="/logo.png" alt="Logo" width={300} height={300} className="mr-6" />
+          <Image src="/logo.png" alt="Logo" width={300} height={300} className="mr-6" priority />
         </Link>
         <ul className={`flex relative transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
           {links.map((link) => (
@@ -63,6 +77,7 @@ const Navbar = () => {
               label={link.label} 
               onMouseEnter={link.label === 'SERVICES' ? handleMouseEnter : undefined}
               onMouseLeave={link.label === 'SERVICES' ? handleMouseLeave : undefined}
+              pathname={pathname}
             />
           ))}
           <li className="relative">
@@ -92,10 +107,10 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ href, label, onMouseEnter, onMouseLeave }: { href: string; label: string; onMouseEnter?: () => void; onMouseLeave?: () => void }) => {
+const NavLink = ({ href, label, onMouseEnter, onMouseLeave, pathname }: { href: string; label: string; onMouseEnter?: () => void; onMouseLeave?: () => void; pathname: string }) => {
   return (
     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="relative">
-      <Link href={href} className="hover:text-cyan-600 text-white/80 transition-colors duration-300 ease-in-out ml-8">
+      <Link href={href} className={`hover:text-cyan-600 transition-colors duration-300 ease-in-out ml-8 cursor-pointer ${pathname.replace(/^\//, '') === href ? 'text-cyan-600' : 'text-white/80'}`}>
         {label}
       </Link>
     </li>

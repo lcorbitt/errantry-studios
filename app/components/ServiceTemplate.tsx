@@ -146,7 +146,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
 
   return (
     <div className="bg-white text-black min-h-screen">
-      <div className="max-w-6xl mx-auto pt-16">
+      <div className="max-w-7xl mx-auto pt-16">
         <div className="flex items-center mb-16">
           {/* YouTube Video Section */}
           <div className="flex-1 h-72">
@@ -187,40 +187,40 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
         {videoIds && (
           <LazyLoad>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {videoIds.map((videoId, index) => (
-              <div 
-                key={index} 
-                className="aspect-video relative cursor-pointer group"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={() => handleMouseLeave(index)}
-                onClick={() => handleVideoClick(videoId)}
-              >
-                <YouTube 
-                  videoId={videoId} 
-                  opts={{
-                    ...opts,
-                    playerVars: {
-                      ...opts.playerVars,
-                      playlist: videoId,
-                    }
-                  }}
-                  onReady={(event) => onReady(event, index)}
-                  className="w-full h-full"
-                  iframeClassName="w-full h-full"
-                />
-                <ThumbnailOverlay 
-                  videoId={videoId} 
-                  isHovered={hoveredIndex === index}
-                />
-                {hoveredIndex !== index && <PlayButton />}
-              </div>
-            ))}
-          </div>
-        </LazyLoad>
+              {videoIds.map((videoId, index) => (
+                <div 
+                  key={index} 
+                  className="aspect-video relative cursor-pointer group"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                  onClick={() => handleVideoClick(videoId)}
+                >
+                  <YouTube 
+                    videoId={videoId} 
+                    opts={{
+                      ...opts,
+                      playerVars: {
+                        ...opts.playerVars,
+                        playlist: videoId,
+                      }
+                    }}
+                    onReady={(event) => onReady(event, index)}
+                    className="w-full h-full"
+                    iframeClassName="w-full h-full"
+                  />
+                  <ThumbnailOverlay 
+                    videoId={videoId} 
+                    isHovered={hoveredIndex === index}
+                  />
+                  {hoveredIndex !== index && <PlayButton />}
+                </div>
+              ))}
+            </div>
+          </LazyLoad>
         )}
       </div>
 
-      <div className="max-w-6xl mx-auto py-8">
+      <div className="max-w-7xl mx-auto py-8">
         <Testimonial
           author={testimonialAuthor}
           company={testimonialCompany}
@@ -230,7 +230,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
 
       {photoIds && (
         <LazyLoad>
-          <div className="max-w-6xl mx-auto pb-16">
+          <div className="max-w-7xl mx-auto pb-16">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {photoIds.map((photoId, index) => (
                 <div key={index} className="aspect-square bg-gray-200 relative overflow-hidden group">

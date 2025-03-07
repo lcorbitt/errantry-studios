@@ -25,6 +25,10 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
+p {
+  line-height: 1.5;
+}
+
 /* Carousel */
 .slider-container .slick-prev:before,
 .slider-container .slick-next:before {

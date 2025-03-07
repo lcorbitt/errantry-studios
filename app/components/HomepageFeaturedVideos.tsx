@@ -142,15 +142,15 @@ const HomepageFeaturedVideos = () => {
 
   return (
     <>
-      <section className="w-full px-32 flex flex-col justify-center bg-black">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full px-16 flex flex-col justify-center bg-black">
+        <div className="max-w-7xl mx-auto w-full">
           <h2 className="text-3xl font-bold text-center mb-12 text-white">FEATURED VIDEOS</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {videos.map((video, index) => (
               <div 
                 key={index} 
-                className="aspect-video relative cursor-pointer group h-52"
+                className="aspect-video relative cursor-pointer group"
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
                 onClick={() => handleVideoClick(video.id)}

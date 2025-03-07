@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 const HomepageVideoServices = () => {
   return (
-    <section className="relative w-full bg-black px-32">
-      <div className="grid grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <section className="relative w-full bg-black px-16">
+      <div className="grid grid-cols-2 gap-8 max-w-7xl mx-auto">
         {/* Image */}
         <div className="w-full h-full">
           <img 

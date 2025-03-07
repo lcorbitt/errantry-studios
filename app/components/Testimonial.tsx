@@ -11,8 +11,8 @@ interface TestimonialProps {
 const Testimonial = ({ author, company, quote }: TestimonialProps) => {
 
   return (
-    <section className="w-full py-14 px-32 flex flex-col justify-center bg-white slider-container">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-14 px-16 flex flex-col justify-center bg-white slider-container">
+      <div className="max-w-7xl mx-auto">
         <div className="px-4">
           <div className="bg-white mx-4">
             <div className="flex flex-col items-center text-center">

@@ -36,8 +36,8 @@ const HomepageTestimonial = () => {
   };
 
   return (
-    <section className="w-full py-14 px-32 flex flex-col justify-center bg-white slider-container">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-14 px-16 flex flex-col justify-center bg-white slider-container">
+      <div className="max-w-7xl mx-auto">
         {/* <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2> */}
         
         <Slider {...settings}>
