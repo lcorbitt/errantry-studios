@@ -55,7 +55,7 @@ const BrandCarousel = () => {
   };
 
   return (
-    <section className="w-full py-8 px-16 flex flex-col justify-center bg-white slider-container">
+    <section className="w-full p-16 flex flex-col justify-center bg-white slider-container">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center text-3xl font-bold mb-8 text-black">BRANDS WE HAVE WORKED WITH</h2>
         <Slider {...settings} className="w-full">

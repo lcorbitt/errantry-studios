@@ -75,7 +75,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form ref={form} onSubmit={handleSubmit} className="bg-black py-14 w-full mx-auto px-16">
+    <form ref={form} onSubmit={handleSubmit} className="bg-black p-16 w-full mx-auto">
       <ToastContainer hideProgressBar={true} />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white/80">
@@ -186,7 +186,7 @@ const ContactForm = () => {
                 required
               />
             </div>
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <input
                 type="checkbox"
                 name="subscribe"
@@ -195,7 +195,7 @@ const ContactForm = () => {
                 className="mr-2"
               />
               <label>Yes, subscribe to ESTV</label>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex justify-end mt-16">

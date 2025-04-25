@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 const links = [
+  { href: '/', label: 'HOME' },
   { href: '#', label: 'SERVICES' },
-  { href: 'estv', label: 'ESTV' },
+  // { href: 'estv', label: 'ESTV' },
   { href: 'about', label: 'ABOUT' },
   { href: 'contact', label: 'CONTACT' },
 ];
@@ -25,6 +26,7 @@ const Navbar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [isContentVisible, setContentVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   let timeoutId: NodeJS.Timeout;
 
@@ -63,13 +65,24 @@ const Navbar = () => {
     setDropdownVisible(false);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className={`px-16 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/80' : 'bg-black'}`}>
+    <nav className={`px-4 py-4 flex items-center justify-between sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/80' : 'bg-black'}`}>
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
         <Link href="/" className={`flex items-center transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Image src="/logo.png" alt="Logo" width={300} height={300} className="mr-6" priority />
         </Link>
-        <ul className={`flex relative transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="text-white focus:outline-none hover:cursor-pointer">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+        <ul className={`flex relative transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'} hidden lg:flex`}>
           {links.map((link) => (
             <NavLink 
               key={link.href} 
@@ -103,6 +116,19 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-16 right-0 bg-black text-white w-full p-4 cursor-pointer hover:cyan-600">
+          <ul>
+            {links.map((link) => (
+              <li key={link.href} className="p-2">
+                <Link href={link.href} onClick={toggleMenu} className="block hover:text-cyan-600">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
@@ -110,7 +136,7 @@ const Navbar = () => {
 const NavLink = ({ href, label, onMouseEnter, onMouseLeave, pathname }: { href: string; label: string; onMouseEnter?: () => void; onMouseLeave?: () => void; pathname: string }) => {
   return (
     <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="relative">
-      <Link href={href} className={`hover:text-cyan-600 transition-colors duration-300 ease-in-out ml-8 cursor-pointer ${pathname.replace(/^\//, '') === href ? 'text-cyan-600' : 'text-white/80'}`}>
+      <Link href={href} className={`hover:text-cyan-600 transition-colors duration-300 ease-in-out ml-8 ${label === 'SERVICES' ? '' : 'cursor-pointer'} ${pathname.replace(/^\//, '') === href ? 'text-cyan-600' : 'text-white/80'}`}>
         {label}
       </Link>
     </li>
