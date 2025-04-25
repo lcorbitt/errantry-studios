@@ -33,38 +33,41 @@ const HomepageTestimonial = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
+    arrows: true,
   };
 
   return (
-    <section className="w-full pt-16 pb-20 flex flex-col justify-center bg-white slider-container">
-      <div className="max-w-7xl mx-auto">
-        {/* <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2> */}
-        
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="px-4">
-              <div className="bg-white mx-4">
-                <div className="flex flex-col items-center text-center">
-                  <blockquote className="text-xl italic text-gray-700 mb-4 font-bold">
-                    "{testimonial.quote}"
-                  </blockquote>
+    <section className="w-full pt-16 pb-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="relative w-full">          
+          <Slider {...settings}>
+            {testimonials.map((testimonial, index) => (
+              <div key={index}>
+                <div className="bg-white">
+                  <div className="flex flex-col items-center text-center px-2 md:px-8">
+                    <blockquote className="text-lg md:text-xl lg:text-2xl italic text-gray-700 mb-4 md:mb-6 font-bold leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
 
-                  <div className="mt-4">
-                    <p className="font-semibold text-gray-900">{testimonial.author} | <span className="text-gray-600">{testimonial.company}</span></p>
-                  </div>
+                    <div className="mt-4">
+                      <p className="font-semibold text-gray-900 text-base md:text-lg">
+                        {testimonial.author} | <span className="text-gray-600">{testimonial.company}</span>
+                      </p>
+                    </div>
 
-                  <div className="flex items-center gap-2 mt-4">
-                    <img 
-                      src="/google_stars.png" 
-                      alt="5 star Google Review" 
-                      className="h-8"
-                    />
+                    <div className="flex items-center gap-2 mt-4">
+                      <img 
+                        src="/google_stars.png" 
+                        alt="5 star Google Review" 
+                        className="h-6 md:h-8"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

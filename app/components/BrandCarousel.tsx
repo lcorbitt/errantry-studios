@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const brands = [
   { src: '/slide_1.png', alt: 'Slide 1' },
@@ -34,20 +36,35 @@ const BrandCarousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    arrows: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -55,16 +72,35 @@ const BrandCarousel = () => {
   };
 
   return (
-    <section className="w-full p-16 flex flex-col justify-center bg-white slider-container">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-center text-3xl font-bold mb-8 text-black">BRANDS WE HAVE WORKED WITH</h2>
-        <Slider {...settings} className="w-full">
-          {brands.map((brand, index) => (
-            <div key={index} className="flex justify-center px-4"> {/* Added px-4 for consistent horizontal padding */}
-              <img src={brand.src} alt={brand.alt} className="h-24 object-contain" />
-            </div>
-          ))}
-        </Slider>
+    <section className="w-full bg-white overflow-visible slider-container">
+      <div className="max-w-7xl mx-auto py-16 px-4 lg:px-12">
+        <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-black">BRANDS WE HAVE WORKED WITH</h2>
+        <div className="w-full relative">
+          <style jsx global>{`
+            .slick-dots {
+              bottom: -30px !important;
+            }
+            .slick-dots li button:before {
+              font-size: 12px !important;
+              color: #000000 !important;
+              opacity: 0.3 !important;
+            }
+            .slick-dots li.slick-active button:before {
+              opacity: 0.8 !important;
+            }
+          `}</style>
+          <Slider {...settings}>
+            {brands.map((brand, index) => (
+              <div key={index} className="flex justify-center items-center px-1 sm:px-2 md:px-4">
+                <img 
+                  src={brand.src} 
+                  alt={brand.alt} 
+                  className="h-12 sm:h-16 md:h-24 w-24 sm:w-32 md:w-48 object-contain max-w-full"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

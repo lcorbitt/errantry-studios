@@ -22,7 +22,7 @@ const PlayButton = () => (
   <div className="absolute inset-0 flex items-center justify-center transition-opacity group-hover:opacity-0">
     <div className="bg-cyan-600 rounded-full p-2">
       <svg 
-        className="w-8 h-8 text-white" 
+        className="w-6 h-6 md:w-8 md:h-8 text-white" 
         fill="currentColor" 
         viewBox="0 0 24 24"
       >
@@ -53,14 +53,14 @@ const VideoModal = ({
   if (!videoId) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center px-4 md:px-8">
       {/* Close button */}
       <button 
         onClick={onClose}
-        className="absolute top-8 right-8 text-white hover:text-cyan-500 transition-colors cursor-pointer"
+        className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-cyan-500 transition-colors cursor-pointer"
       >
         <svg 
-          className="w-8 h-8" 
+          className="w-6 h-6 md:w-8 md:h-8" 
           fill="currentColor" 
           viewBox="0 0 24 24"
         >
@@ -146,37 +146,38 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
 
   return (
     <div className="bg-white text-black min-h-screen">
-      <div className="max-w-7xl mx-auto pt-16">
-        <div className="flex items-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16">
+        {/* Hero Section */}
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 mb-8 md:mb-16">
           {/* YouTube Video Section */}
-          <div className="flex-1 h-72">
+          <div className="w-full lg:w-1/2 aspect-video">
             <iframe
               width="100%"
-              height="300"
+              height="100%"
               src={`https://www.youtube.com/embed/${heroVideoId}`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="w-full h-full"
+              className="w-full h-full shadow-lg"
             ></iframe>
           </div>
 
-          {/* Vertical Cyan Line */}
-          <div className="w-0.5 bg-cyan-600 h-64 mx-8"></div>
+          {/* Vertical Cyan Line - Hidden on mobile */}
+          <div className="hidden lg:block w-0.5 bg-cyan-600 self-stretch"></div>
 
           {/* Title and Paragraph Section */}
-          <div className="flex-1 grid grid-cols-1 gap-4">
-            <h2 className="text-3xl font-bold mb-4">{title}</h2>
+          <div className="w-full lg:w-1/2 flex flex-col gap-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-center lg:text-left">{title}</h2>
 
-            <p className="text-black">
+            <p className="text-black text-base md:text-lg leading-relaxed text-center lg:text-left">
               {description}
             </p>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:justify-start">
               <Link
                 href="/contact"
-                className="bg-cyan-600 text-white px-8 py-2 rounded-lg text-xl uppercase transition-all duration-500 w-fit hover:bg-white hover:text-cyan-600 border border-cyan-600"
+                className="bg-cyan-600 text-white px-6 md:px-8 py-2 rounded-lg text-lg md:text-xl uppercase transition-all duration-500 hover:bg-white hover:text-cyan-600 border border-cyan-600 hover:scale-105"
               >
                 Get Started
               </Link>
@@ -184,13 +185,14 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
           </div>
         </div>
 
+        {/* Video Grid Section */}
         {videoIds && (
           <LazyLoad>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {videoIds.map((videoId, index) => (
                 <div 
                   key={index} 
-                  className="aspect-video relative cursor-pointer group"
+                  className="aspect-video relative cursor-pointer group overflow-hidden shadow-lg"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={() => handleMouseLeave(index)}
                   onClick={() => handleVideoClick(videoId)}
@@ -218,33 +220,36 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ heroVideoId, title, d
             </div>
           </LazyLoad>
         )}
-      </div>
 
-      <div className="max-w-7xl mx-auto py-8">
-        <Testimonial
-          author={testimonialAuthor}
-          company={testimonialCompany}
-          quote={testimonialQuote}
-        />
-      </div>
-
-      {photoIds && (
-        <LazyLoad>
-          <div className="max-w-7xl mx-auto pb-16">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        {/* Photo Grid Section */}
+        {photoIds && (
+          <LazyLoad>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-16">
               {photoIds.map((photoId, index) => (
-                <div key={index} className="aspect-square bg-gray-200 relative overflow-hidden group">
+                <div 
+                  key={index} 
+                  className="aspect-video relative overflow-hidden shadow-lg"
+                >
                   <img 
-                    src={`/${photoId}`}
+                    src={photoId} 
                     alt={`Photo ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
             </div>
-          </div>
-        </LazyLoad>
-      )}
+          </LazyLoad>
+        )}
+
+        {/* Testimonial Section */}
+        <div className="mt-8 md:mt-16">
+          <Testimonial
+            quote={testimonialQuote}
+            author={testimonialAuthor}
+            company={testimonialCompany}
+          />
+        </div>
+      </div>
 
       {/* Modal */}
       <VideoModal 

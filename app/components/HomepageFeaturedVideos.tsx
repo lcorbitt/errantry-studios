@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
 import type { YouTubePlayer } from 'react-youtube';
 
@@ -51,14 +51,14 @@ const VideoModal = ({
   if (!videoId) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center px-4 md:px-8 lg:px-16">
       {/* Close button */}
       <button 
         onClick={onClose}
-        className="absolute top-8 right-8 text-white hover:text-cyan-500 transition-colors cursor-pointer"
+        className="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-cyan-500 transition-colors cursor-pointer"
       >
         <svg 
-          className="w-8 h-8" 
+          className="w-6 h-6 md:w-8 md:h-8" 
           fill="currentColor" 
           viewBox="0 0 24 24"
         >
@@ -81,7 +81,7 @@ const VideoModal = ({
             },
           }}
           className="w-full h-full"
-          iframeClassName="w-full h-full"
+          iframeClassName="w-full h-full rounded-lg"
         />
       </div>
     </div>
@@ -92,6 +92,27 @@ const HomepageFeaturedVideos = () => {
   const playerRefs = useRef<{ [key: number]: YouTubePlayer }>({});
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedVideoId, setSelectedVideoId] = useState<string | null>(null);
+  const [showAllVideos, setShowAllVideos] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Check if we're on desktop
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 640); // sm breakpoint
+      if (window.innerWidth >= 640) {
+        setShowAllVideos(true);
+      }
+    };
+
+    // Initial check
+    checkDesktop();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkDesktop);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
 
   const opts = {
     width: '100%',
@@ -140,17 +161,22 @@ const HomepageFeaturedVideos = () => {
     setSelectedVideoId(null);
   };
 
+  // Get the videos to display based on screen size
+  const displayedVideos = isDesktop || showAllVideos ? videos : videos.slice(0, 3);
+
   return (
     <>
-      <section className="w-full px-16 flex flex-col justify-center bg-black">
-        <div className="max-w-7xl mx-auto w-full">
-          <h2 className="text-3xl font-bold text-center mb-12 text-white">FEATURED VIDEOS</h2>
+      <section className="w-full bg-black">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-white">
+            FEATURED VIDEOS
+          </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {videos.map((video, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+            {displayedVideos.map((video, index) => (
               <div 
                 key={index} 
-                className="aspect-video relative cursor-pointer group"
+                className="aspect-video relative cursor-pointer group overflow-hidden"
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
                 onClick={() => handleVideoClick(video.id)}
@@ -176,6 +202,18 @@ const HomepageFeaturedVideos = () => {
               </div>
             ))}
           </div>
+
+          {/* Show More/Less Button - Only visible on mobile */}
+          {!isDesktop && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={() => setShowAllVideos(!showAllVideos)}
+                className="bg-cyan-600 text-white px-6 py-2 rounded-lg text-lg uppercase transition-all duration-500 hover:bg-black hover:text-cyan-600 border border-cyan-600"
+              >
+                {showAllVideos ? 'Show Less' : 'Show More'}
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

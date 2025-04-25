@@ -11,7 +11,7 @@ import HomepageProductionReel from "./components/HomepageProductionReel";
 export default function Home() {
   return (
     <div className="items-center justify-items-center">
-      <div className="flex flex-col gap-16 row-start-2 items-center sm:items-start w-full bg-black">
+      <div className="flex flex-col gap-16 md:gap-24 row-start-2 items-center sm:items-start w-full bg-black">
         <HomepageHero />
         <HomepageVideoServices />
 

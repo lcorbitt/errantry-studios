@@ -15,8 +15,8 @@ const images = [
 
 const HomepageBehindTheScenes = () => {
   return (
-    <section className="w-full p-16 flex flex-col justify-center bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full bg-white py-16 md:py-24 flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 ">
         <h2 className="text-3xl font-bold text-center mb-12 text-black">BEHIND THE SCENES</h2>
         
         <div className="grid grid-cols-4 grid-rows-2 gap-2">

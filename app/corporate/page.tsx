@@ -17,14 +17,14 @@ const CorporatePage = () => {
   ];
 
   const photoIds = [
-    'corporate_1.png',
-    'corporate_2.png',
-    'corporate_3.png',
-    'corporate_4.png',
-    'corporate_5.png',
-    'corporate_6.png',
-    'corporate_7.png',
-    'corporate_8.png'
+    'corporate_1.jpg',
+    'corporate_2.jpg',
+    'corporate_3.jpg',
+    'corporate_4.jpg',
+    'corporate_5.jpg',
+    'corporate_6.jpg',
+    'corporate_7.jpg',
+    'corporate_8.jpg'
   ];
 
   const testimonialAuthor = "FRED MCGINNIS";

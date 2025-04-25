@@ -5,8 +5,8 @@ import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white/80 p-16 border-t border-white/10">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+    <footer className="bg-black text-white/80 p-16 border-t border-white/10 w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="mb-4 md:mb-0">
           <p  className='text-sm'>919 West Main St. Ste. U3</p>
           <p  className='text-sm'>Hendersonville, TN 37075</p>
