@@ -69,6 +69,7 @@ const ContactForm = () => {
         }, 1000); // Redirect after 1 second
         })
         .catch((error) => {
+          console.log(error);
           setIsLoading(false);
         });
     }
