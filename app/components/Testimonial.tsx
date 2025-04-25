@@ -17,7 +17,7 @@ const Testimonial = ({ author, company, quote }: TestimonialProps) => {
           <div className="bg-white mx-4">
             <div className="flex flex-col items-center text-center">
               <blockquote className="text-xl italic text-gray-700 mb-4 font-bold">
-                "{quote}"
+                &quot;{quote}&quot;
               </blockquote>
               <div className="mt-4">
                 <p className="font-semibold text-gray-900">{author} | <span className="text-gray-600">{company}</span></p>

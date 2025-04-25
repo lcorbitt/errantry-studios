@@ -46,7 +46,7 @@ const HomepageTestimonial = () => {
                 <div className="bg-white">
                   <div className="flex flex-col items-center text-center px-2 md:px-8">
                     <blockquote className="text-lg md:text-xl lg:text-2xl italic text-gray-700 mb-4 md:mb-6 font-bold leading-relaxed">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </blockquote>
 
                     <div className="mt-4">
