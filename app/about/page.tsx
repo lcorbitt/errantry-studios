@@ -29,11 +29,11 @@ const AboutPage = () => {
       <section className="relative w-full bg-black py-12 md:py-24">
         <div className="max-w-7xl mx-auto bg-black px-4 md:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto flex justify-center">
-            <h2 className="text-white text-2xl md:text-3xl mb-8 md:mb-12 lg:mb-16 font-bold">OUR FOCUS</h2>
+            <h2 className="text-white text-2xl md:text-3xl mb-12 lg:mb-16 font-bold">OUR FOCUS</h2>
           </div>
 
           {/* Focus 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto bg-black mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto bg-black mb-16">
             <div className="w-full h-full flex flex-col gap-8 md:gap-12 lg:gap-16 max-w-7xl mx-auto pb-8 md:pb-16">
               <div>
                 <h3 className="text-lg md:text-xl text-cyan-600 font-bold mb-6 md:mb-8">CORPORATE EXCELLENCE</h3>
@@ -53,7 +53,7 @@ const AboutPage = () => {
           </div>
 
           {/* Focus 2 */} 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto bg-black mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto bg-black mb-16">
             <div className="w-full h-full flex flex-col gap-8 md:gap-12 lg:gap-16 pb-8 md:pb-16">
               <div>
                 <h3 className="text-lg md:text-xl text-cyan-600 font-bold mb-6 md:mb-8">COMMUNITY IMPACT</h3>
@@ -73,7 +73,7 @@ const AboutPage = () => {
           </div>
 
           {/* Focus 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto bg-black mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto bg-black">
             <div className="w-full h-full flex flex-col gap-8 md:gap-12 lg:gap-16">
               <div>
                 <h3 className="text-lg md:text-xl text-cyan-600 font-bold mb-6 md:mb-8">CREATIVE CONNECTION</h3>
