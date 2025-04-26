@@ -76,7 +76,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`w-full bg-black md:py-4 sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/80' : 'bg-black'}`}>
+    <nav className={`w-full bg-black py-4 sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/80' : 'bg-black'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between w-full">
         <Link href="/" className={`flex items-center transition-opacity duration-1000 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Image src="/logo.png" alt="Logo" width={300} height={300} className="mr-6" priority />
